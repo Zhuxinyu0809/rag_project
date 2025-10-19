@@ -1,0 +1,16 @@
+# RAG项目依赖列表
+
+# 核心依赖
+datasets>=2.14.0          # HuggingFace数据集
+bm25s>=0.1.0             # BM25检索
+PyStemmer>=2.2.0         # 词干提取
+openai>=1.0.0            # OpenAI API客户端（兼容多种API）
+gradio>=4.0.0            # Web界面
+
+# 可选依赖（未来功能）
+# torch>=2.0.0           # PyTorch（本地模型）
+# transformers>=4.30.0   # Transformers库（本地模型）
+# sentence-transformers  # 密集检索
+# faiss-cpu             # 向量检索
+# numpy                 # 数值计算
+# pandas                # 数据处理
