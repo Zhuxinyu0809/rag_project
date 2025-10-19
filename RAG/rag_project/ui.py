@@ -180,12 +180,11 @@ def create_gradio_interface(rag_system: RAGSystem):
         # 示例问题
         gr.Examples(
             examples=[
-                ["Where was Barack Obama born?", 10, available_models[0]],
-                ["What is the capital of France?", 10, available_models[0]],
-                ["Who wrote Romeo and Juliet?", 10, available_models[0]],
+                ["Where was Barack Obama born?"],
+                ["What is the capital of France?"],
+                ["Who wrote Romeo and Juliet?"],
             ],
-            inputs=[question_input, top_k_slider, model_selector],
-            label="📌 示例问题"
+            inputs=question_input
         )
         
         # 底部信息
