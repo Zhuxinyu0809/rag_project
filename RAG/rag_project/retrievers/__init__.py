@@ -5,6 +5,7 @@
 """
 
 from .bm25_retriever import BM25Retriever
+from .qwen_embedding_retriever import QwenEmbeddingRetriever
 
 # 未来可以添加：
 # from .dense_retriever import DenseRetriever
@@ -12,6 +13,6 @@ from .bm25_retriever import BM25Retriever
 
 __all__ = [
     'BM25Retriever',
-    # 'DenseRetriever',
+    'QwenEmbeddingRetriever',
     # 'HybridRetriever',
 ]

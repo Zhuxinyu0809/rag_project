@@ -14,18 +14,6 @@ SILICONFLOW_CONFIG = {
     "base_url": "https://api.siliconflow.cn/v1",
 }
 
-# DeepSeek API配置（备用）
-DEEPSEEK_CONFIG = {
-    "api_key": "sk-your-deepseek-key",  # 如果需要就填入
-    "base_url": "https://api.deepseek.com/v1",
-}
-
-# OpenRouter API配置（备用）
-OPENROUTER_CONFIG = {
-    "api_key": "sk-or-your-openrouter-key",  # 如果需要就填入
-    "base_url": "https://openrouter.ai/api/v1",
-}
-
 
 # ============================================================================
 # 模型配置
@@ -68,8 +56,20 @@ BM25_CONFIG = {
 
 # 未来可以添加其他检索器的配置
 DENSE_RETRIEVER_CONFIG = {
-    "model_name": "BAAI/bge-base-en-v1.5",  # 示例
+    # Qwen3-Embedding配置（使用API）
+    "use_api": True,  # True=使用API, False=本地模型
+    "api_model": "Qwen/Qwen3-Embedding",  # API模型名
+    "api_key": None,  # 使用主API配置
+    "api_base_url": None,  # 使用主API配置
+    
+    # 本地模型配置（如果use_api=False）
+    "local_model": "Qwen/Qwen3-Embedding",
     "device": "cpu",
+    "batch_size": 32,
+    
+    # 向量索引配置
+    "index_type": "flat",  # "flat" 或 "ivf"
+    "dimension": 1024,  # Qwen3-Embedding的维度
 }
 
 

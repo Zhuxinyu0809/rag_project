@@ -12,5 +12,5 @@ gradio>=4.0.0            # Web界面
 # transformers>=4.30.0   # Transformers库（本地模型）
 # sentence-transformers  # 密集检索
 # faiss-cpu             # 向量检索
-# numpy                 # 数值计算
+numpy                 # 数值计算
 # pandas                # 数据处理

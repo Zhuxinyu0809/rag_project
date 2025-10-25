@@ -1,4 +1,4 @@
-# text_tokenizer.py
+# text_tokenizer.py (修复版)
 
 import re
 from typing import List, Union
@@ -59,12 +59,15 @@ class TextTokenizer:
         # 3. 分词
         tokens = word_tokenize(text)
         
-        # 4. 移除停用词 和 5. 词干提取 (在一个循环中完成以提高效率)
-        processed_tokens = [
-            self.stemmer.stem(token) 
-            for token in tokens 
-            if token not in self.stopwords and len(token) > 1 # 过滤掉停用词和单个字母
-        ]
+        # 4. 移除停用词（在词干提取前）
+        tokens = [token for token in tokens if token not in self.stopwords and len(token) > 1]
+        
+        # 5. 词干提取 - 使用 stemWords (批量处理)
+        # ✅ 修复：使用 stemWords 而不是 stem
+        if tokens:  # 只有当tokens非空时才调用
+            processed_tokens = self.stemmer.stemWords(tokens)
+        else:
+            processed_tokens = []
         
         return processed_tokens
 
